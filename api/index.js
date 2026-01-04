@@ -31,7 +31,7 @@ const limiter = rateLimit({
 app.use(limiter);
 
 app.use(cors({
-    origin: ["http://localhost:5173", "https://your-frontend-app.vercel.app"], // Array mein URLs dein
+    origin: ["http://localhost:5173", "https://bookstore-frontend-beta-three.vercel.app"], // Array mein URLs dein
     credentials: true
 }));
 app.use(helmet());
