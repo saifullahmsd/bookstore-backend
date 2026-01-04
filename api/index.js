@@ -31,8 +31,8 @@ const limiter = rateLimit({
 app.use(limiter);
 
 app.use(cors({
-    origin: ["http://localhost:5173", "http://127.0.0.1:5173"], // Allow Vite frontends
-    credentials: true, // Allow cookies to be sent/received
+    origin: "*", // Allow all origins for Vercel deployment testing
+    credentials: true,
 }));
 app.use(helmet());
 app.use(express.json());
