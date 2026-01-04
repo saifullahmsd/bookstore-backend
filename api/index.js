@@ -31,8 +31,8 @@ const limiter = rateLimit({
 app.use(limiter);
 
 app.use(cors({
-    origin: "*", // Allow all origins for Vercel deployment testing
-    credentials: true,
+    origin: ["http://localhost:5173", "https://your-frontend-app.vercel.app"], // Array mein URLs dein
+    credentials: true
 }));
 app.use(helmet());
 app.use(express.json());
