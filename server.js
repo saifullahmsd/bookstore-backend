@@ -40,6 +40,10 @@ app.use(cookieParser());
 app.use("/api/books", require("./routes/book.routes"));
 app.use("/api/users", require("./routes/user.routes"));
 
+app.get('/', (req, res) => {
+    res.send('API is running successfully! 🚀');
+});
+
 app.use(errorHandler);
 
 
