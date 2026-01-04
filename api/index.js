@@ -1,13 +1,13 @@
 require("dotenv").config();
-const env = require("./config/validateEnv");
+const env = require("../config/validateEnv");
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const helmet = require("helmet");
 const cors = require("cors");
 const morgan = require("morgan");
 const rateLimit = require("express-rate-limit");
-const connectDB = require("./config/db");
-const errorHandler = require("./middlewares/error.middleware");
+const connectDB = require("../config/db");
+const errorHandler = require("../middlewares/error.middleware");
 
 
 const app = express();
@@ -37,8 +37,8 @@ app.use(cors({
 app.use(helmet());
 app.use(express.json());
 app.use(cookieParser());
-app.use("/api/books", require("./routes/book.routes"));
-app.use("/api/users", require("./routes/user.routes"));
+app.use("/api/books", require("../routes/book.routes"));
+app.use("/api/users", require("../routes/user.routes"));
 
 app.get('/', (req, res) => {
     res.send('API is running successfully! 🚀');
